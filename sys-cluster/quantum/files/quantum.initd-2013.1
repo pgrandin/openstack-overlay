@@ -25,7 +25,7 @@ start() {
 			  --pidfile "${PID_PATH}/${SVCNAME}.pid" \
 			  --exec /usr/bin/${SVCNAME} -- \
 			  --config-file=/etc/quantum/quantum.conf --config-file=/etc/quantum/plugins/openvswitch/ovs_quantum_plugin.ini \
-			  --log-file=${LOG_PATH}/${SVCNAME}.log
+			  --log-file=/var/log/quantum/${LOG_PATH}/${SVCNAME}.log
 	
 	eend $? "Failed to start ${SVCNAME}"
 }
