@@ -1,0 +1,3 @@
+CONF_FILE=/etc/cinder/cinder.conf
+PID_PATH=/var/run/cinder
+LOG_PATH=/var/log/cinder
