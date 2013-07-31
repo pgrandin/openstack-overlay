@@ -62,8 +62,8 @@ python_install() {
 	insinto /etc/cinder/rootwrap.d
 	newins "${S}/etc/cinder/rootwrap.d/volume.filters" "volume.filters"
 
-    newconfd "${FILESDIR}/nova.confd-2013.1" nova
-    newinitd "${FILESDIR}/nova.initd-2013.1" nova
+    newconfd "${FILESDIR}/cinder.confd-2013.1" nova
+    newinitd "${FILESDIR}/cinder.initd-2013.1" nova
 
     for function in api scheduler volume; do
        dosym /etc/init.d/cinder /etc/init.d/cinder-${function}
