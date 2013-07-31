@@ -79,7 +79,9 @@ python_install() {
 	done
 
 	diropts -m 0750
-	dodir /var/run/nova /var/log/nova /var/lock/nova /var/lib/nova/instances
+	dodir /var/run/nova /var/log/nova /var/lock/nova
+	diropts -m 0755
+	dodir /var/lib/nova/instances
 
 	#copy migration conf file (not coppied on install via setup.py script)
 	insinto /usr/$(get_libdir)/python2.7/site-packages/nova/db/sqlalchemy/migrate_repo/
