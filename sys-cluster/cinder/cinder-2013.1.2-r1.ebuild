@@ -69,4 +69,6 @@ python_install() {
        dosym /etc/init.d/cinder /etc/init.d/cinder-${function}
     done
 
+    diropts -m 0750
+    dodir /var/log/cinder
 }
