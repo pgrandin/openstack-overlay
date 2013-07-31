@@ -70,5 +70,5 @@ python_install() {
     done
 
     diropts -m 0750
-    dodir /var/log/cinder
+    dodir /var/run/cinder /var/log/cinder
 }
