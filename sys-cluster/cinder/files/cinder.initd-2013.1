@@ -26,6 +26,8 @@ checkconfig() {
 start() {
 	checkconfig || return $?
 	. /etc/conf.d/$BASENAME
+
+	[ ! -d ${PID_PATH} ] && install -d -m 755 -o root -g root ${PID_PATH}
 	
 	ebegin "Starting ${SVCNAME}"
 
