@@ -74,6 +74,10 @@ python_install() {
 	newconfd "${FILESDIR}/quantum.confd-2013.1" quantum
 	newinitd "${FILESDIR}/quantum.initd-2013.1" quantum-openvswitch-agent
 
+	for function in dhcp-agent l3-agent metadata-agent server; do
+		dosym /etc/init.d/quantum /etc/init.d/quantum${function}
+	done
+
 	diropts -m 0750
 	dodir /var/log/quantum
 
