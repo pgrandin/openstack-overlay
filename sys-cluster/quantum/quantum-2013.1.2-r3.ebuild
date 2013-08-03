@@ -81,6 +81,10 @@ python_install() {
 	diropts -m 0750
 	dodir /var/log/quantum
 
+	# /var/lib/quantum needs to be world-readable for dnsmasq's dhcp (running as nobody)
+	diropts -m 0755
+	dodir /var/lib/quantum
+
 	#remove the etc stuff from usr...
 	rm -R "${D}/usr/etc/"
 
