@@ -72,7 +72,7 @@ python_install() {
 	doins -r "etc/quantum/"
 
 	newconfd "${FILESDIR}/quantum.confd-2013.1" quantum
-	newinitd "${FILESDIR}/quantum.initd-2013.1" quantum-openvswitch-agent
+	newinitd "${FILESDIR}/quantum.initd-2013.1" quantum
 
 	for function in dhcp-agent l3-agent metadata-agent server; do
 		dosym /etc/init.d/quantum /etc/init.d/quantum${function}
