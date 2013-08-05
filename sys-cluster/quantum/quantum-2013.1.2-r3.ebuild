@@ -74,7 +74,7 @@ python_install() {
 	newconfd "${FILESDIR}/quantum.confd-2013.1" quantum
 	newinitd "${FILESDIR}/quantum.initd-2013.1" quantum
 
-	for function in dhcp-agent l3-agent metadata-agent server; do
+	for function in dhcp-agent l3-agent metadata-agent server openvswitch-agent; do
 		dosym /etc/init.d/quantum /etc/init.d/quantum-${function}
 	done
 
