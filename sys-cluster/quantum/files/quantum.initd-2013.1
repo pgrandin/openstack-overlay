@@ -19,12 +19,23 @@ checkconfig() {
 
 start() {
 	checkconfig || return $?
+	PLUGINNAME=${SVCNAME#*-}
+	if [ $PLUGINNAME -eq "openvwitch-agent" ]; then
+		# Should we use a symlink to avoid this special case?
+		CONFIGNAME="plugins/openvswitch/ovs_quantum_plugin"
+		else 
+		CONFIGNAME=${PLUGINNAME//-/_}
+	fi
+	einfo "/usr/bin/${SVCNAME} \
+	    --config-file=/etc/quantum/quantum.conf --config-file=/etc/quantum/${CONFIGNAME}.ini \
+	    --log-file=/var/log/quantum/${LOG_PATH}/${SVCNAME}.log"
+
 	ebegin "Starting ${SVCNAME}"
 	
 	start-stop-daemon --start --background --make-pidfile \
 			  --pidfile "${PID_PATH}/${SVCNAME}.pid" \
 			  --exec /usr/bin/${SVCNAME} -- \
-			  --config-file=/etc/quantum/quantum.conf --config-file=/etc/quantum/plugins/openvswitch/ovs_quantum_plugin.ini \
+			  --config-file=/etc/quantum/quantum.conf --config-file=/etc/quantum/${CONFIGNAME}.ini \
 			  --log-file=/var/log/quantum/${LOG_PATH}/${SVCNAME}.log
 	
 	eend $? "Failed to start ${SVCNAME}"
