@@ -50,7 +50,8 @@ RDEPEND=">=dev-python/amqplib-0.6.1[${PYTHON_USEDEP}]
 		>=dev-python/stevedore-0.7
 		<dev-python/websockify-0.4[${PYTHON_USEDEP}]
 		>=dev-python/oslo-config-1.1.0[${PYTHON_USEDEP}]
-		virtual/python-argparse[${PYTHON_USEDEP}]"
+		virtual/python-argparse[${PYTHON_USEDEP}]
+		www-apps/noVNC"
 
 PATCHES=(
 )
