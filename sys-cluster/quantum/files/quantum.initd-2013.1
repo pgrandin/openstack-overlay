@@ -20,7 +20,7 @@ checkconfig() {
 start() {
 	checkconfig || return $?
 	PLUGINNAME=${SVCNAME#*-}
-	if [[ $PLUGINNAME -eq "openvwitch-agent" || $PLUGINNAME -eq "server" ]]; then
+	if [[ $PLUGINNAME == "openvwitch-agent" || $PLUGINNAME == "server" ]]; then
 		# Should we use a symlink to avoid this special case?
 		CONFIGNAME="plugins/openvswitch/ovs_quantum_plugin"
 		else 
