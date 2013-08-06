@@ -19,8 +19,7 @@ IUSE=""
 
 DEPEND=""
 RDEPEND="${DEPEND}
-		dev-python/numpy
-		www-misc/websockify"
+		dev-python/numpy"
 
 
 src_compile() {
