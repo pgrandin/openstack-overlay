@@ -75,7 +75,7 @@ python_install() {
 	newconfd "${FILESDIR}/nova.confd-2013.1" nova
 	newinitd "${FILESDIR}/nova.initd-2013.1" nova
 
-	for function in api cert compute conductor consoleauth network objectstore scheduler volume xvpvncproxy; do
+	for function in api cert compute conductor consoleauth network objectstore scheduler volume novncproxy xvpvncproxy; do
 		dosym /etc/init.d/nova /etc/init.d/nova-${function}
 	done
 
