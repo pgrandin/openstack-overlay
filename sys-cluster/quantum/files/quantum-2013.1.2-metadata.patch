@@ -1,0 +1,12 @@
+diff --git a/quantum/agent/linux/dhcp.py b/quantum/agent/linux/dhcp.py
+index 564af34..1bf5932 100644
+--- a/quantum/agent/linux/dhcp.py
++++ b/quantum/agent/linux/dhcp.py
+@@ -387,7 +387,6 @@ class Dnsmasq(DhcpLocalProcess):
+             # Add host routes for isolated network segments
+             enable_metadata = (
+                 self.conf.enable_isolated_metadata
+-                and not subnet.gateway_ip
+                 and subnet.ip_version == 4)
+ 
+             if enable_metadata:
