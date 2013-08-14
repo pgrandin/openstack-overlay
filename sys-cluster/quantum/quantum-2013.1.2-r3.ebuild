@@ -56,6 +56,10 @@ RDEPEND=">=dev-python/pastedeploy-1.5.0-r1[${PYTHON_USEDEP}]
 		>=dev-python/oslo-config-1.1.0[${PYTHON_USEDEP}]
 		virtual/python-argparse[${PYTHON_USEDEP}]
 		net-misc/openvswitch"
+src_prepare() {
+    distutils_src_prepare
+    epatch "${FILESDIR}/${P}-metadata.patch"
+}
 
 python_install() {
 	distutils-r1_python_install
