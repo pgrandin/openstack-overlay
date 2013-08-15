@@ -18,7 +18,9 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="test"
 
+# Sudo is probably only needed when using l3-agent
 DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]
+		app-admin/sudo
 		test? ( dev-python/cliff[${PYTHON_USEDEP}]
 				dev-python/configobj[${PYTHON_USEDEP}] )
 				dev-python/coverage[${PYTHON_USEDEP}]
