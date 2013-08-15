@@ -67,6 +67,7 @@ python_install() {
 	doins "etc/api-paste.ini"
 	doins "etc/dhcp_agent.ini"
 	doins "etc/l3_agent.ini"
+	doins "etc/metadata_agent.ini"
 	doins "etc/policy.json"
 	doins "etc/quantum.conf"
 	doins "etc/rootwrap.conf"
