@@ -60,7 +60,7 @@ PATCHES=(
 python_install() {
 	distutils-r1_python_install
 	newconfd "${FILESDIR}/glance.confd" glance
-	newinitd "${FILESDIR}/glance.initd" glance
+	newinitd "${FILESDIR}/glance.initd-2013.1" glance
 
 	for function in api registry scrubber; do
 		dosym /etc/init.d/glance /etc/init.d/glance-${function}
