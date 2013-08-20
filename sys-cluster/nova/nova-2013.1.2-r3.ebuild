@@ -15,7 +15,7 @@ SRC_URI="http://launchpad.net/${PN}/grizzly/${PV}/+download/${P}.tar.gz"
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="kvm"
 
 DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
 
@@ -51,11 +51,11 @@ RDEPEND=">=dev-python/amqplib-0.6.1[${PYTHON_USEDEP}]
 		<dev-python/websockify-0.4[${PYTHON_USEDEP}]
 		>=dev-python/oslo-config-1.1.0[${PYTHON_USEDEP}]
 		virtual/python-argparse[${PYTHON_USEDEP}]
-		www-apps/noVNC"
+		www-apps/noVNC
+		kvm? ( <app-emulation/libvirt-1.1.1 )"
 
 PATCHES=(
 )
-#	"${FILESDIR}/nova-grizzly-1-CVE-2013-2096.patch"
 
 python_install() {
 	distutils-r1_python_install
