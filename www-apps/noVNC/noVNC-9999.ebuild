@@ -10,7 +10,7 @@ DESCRIPTION="noVNC is a VNC client implemented using HTML5 technologies,
 specifically Canvas and WebSockets (supports 'wss://' encryption). noVNC is
 licensed under the LGPLv3."
 HOMEPAGE="http://kanaka.github.com/noVNC/"
-EGIT_REPO_URI="https://github.com/cloudbuilders/noVNC"
+EGIT_REPO_URI="https://github.com/kanaka/noVNC.git"
 
 LICENSE="LGPL-3"
 SLOT="0"
