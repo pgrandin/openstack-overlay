@@ -44,7 +44,8 @@ RDEPEND="dev-python/amqplib
 		>=dev-python/python-keystoneclient-0.2.0
 		dev-python/python-swiftclient[${PYTHON_USEDEP}]
 		>=dev-python/oslo-config-1.1.0[${PYTHON_USEDEP}]
-		virtual/python-argparse[${PYTHON_USEDEP}]"
+		virtual/python-argparse[${PYTHON_USEDEP}]
+		dev-python/rtstool"
 
 PATCHES=( )
 
