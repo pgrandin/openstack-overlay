@@ -28,12 +28,12 @@ src_compile() {
 }
 
 src_install() {
-	dodir /opt/noVNC
-	dodir /opt/noVNC/utils
-	dodir /opt/noVNC/include
-	dodir /opt/noVNC/images
+	dodir /usr/share/novnc
+	dodir /usr/share/novnc/utils
+	dodir /usr/share/novnc/include
+	dodir /usr/share/novnc/images
 
-	exeinto /opt/noVNC/utils
+	exeinto /usr/share/novnc/utils
 	doexe utils/json2graph.py
 	doexe utils/launch.sh
 	doexe utils/nova-novncproxy
@@ -44,14 +44,14 @@ src_install() {
 	doexe utils/wsproxy.py
 	doexe utils/websocket.py
 
-	docinto /opt/noVNC/docs
+	docinto /usr/share/novnc/docs
 	dodoc README.md
 	dodoc LICENSE.txt
 
-	dosym /opt/noVNC/images/favicon.ico /opt/noVNC/
-	cp -pPR *.html ${D}/opt/noVNC/
-	cp -pPR include/* ${D}/opt/noVNC/include
-	cp -pPR images/* ${D}/opt/noVNC/images
+	dosym /usr/share/novnc/images/favicon.ico /usr/share/novnc/
+	cp -pPR *.html ${D}/usr/share/novnc/
+	cp -pPR include/* ${D}/usr/share/novnc/include
+	cp -pPR images/* ${D}/usr/share/novnc/images
 
 	newconfd "${FILESDIR}/noVNC.confd" noVNC
 	newinitd "${FILESDIR}/noVNC.initd" noVNC
