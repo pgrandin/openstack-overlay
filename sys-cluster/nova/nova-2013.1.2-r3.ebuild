@@ -51,7 +51,7 @@ RDEPEND=">=dev-python/amqplib-0.6.1[${PYTHON_USEDEP}]
 		<dev-python/websockify-0.4[${PYTHON_USEDEP}]
 		>=dev-python/oslo-config-1.1.0[${PYTHON_USEDEP}]
 		virtual/python-argparse[${PYTHON_USEDEP}]
-		www-apps/noVNC
+		www-apps/novnc
 		kvm? ( <app-emulation/libvirt-1.1.1 )"
 
 PATCHES=(
