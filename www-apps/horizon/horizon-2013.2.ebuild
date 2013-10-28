@@ -30,7 +30,7 @@ DEPEND=">=dev-python/django-1.4
 		>=dev-python/iso8601-0.1.4
 		>=dev-python/python-cinderclient-1.0.5
 		>=dev-python/python-glanceclient-0.9.0
-		>=dev-python/python-keystoneclient-0.3.2
+		>=dev-python/python-keystoneclient-0.3
 		>=dev-python/python-novaclient-2.15.0
 		>=dev-python/python-neutronclient-2.3.0
 		<dev-python/python-neutronclient-3
