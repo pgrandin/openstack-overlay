@@ -7,15 +7,13 @@ PYTHON_DEPEND="2"
 SUPPORT_PYTHON_ABIS="1"
 RESTRICT_PYTHON_ABIS="3.*"
 
-inherit git-2 distutils
+inherit distutils
 
 DESCRIPTION="This is a client for the OpenStack Nova API. There's a Python API
 (the novaclient module), and a command-line script (nova). Each implements 100%
 of the OpenStack Nova API."
 HOMEPAGE="http://wiki.openstack.org/NovaClientCLI"
-EGIT_REPO_URI="https://github.com/openstack/${PN}.git"
-# 2.9.0
-EGIT_COMMIT="cdebf72"
+SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0"
