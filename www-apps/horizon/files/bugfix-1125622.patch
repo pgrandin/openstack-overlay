@@ -1,0 +1,38 @@
+# diff -urN  a/openstack_dashboard/api/__init__.py  b/openstack_dashboard/api/__init__.py 
+--- a/openstack_dashboard/api/__init__.py 2013-10-28 13:48:21.000000000 +0200
++++ b/openstack_dashboard/api/__init__.py 2013-10-28 13:49:07.000000000 +0200
+@@ -33,20 +33,20 @@
+ shouldn't need to understand the finer details of APIs for
+ Keystone/Nova/Glance/Swift et. al.
+ """
+-from openstack_dashboard.api import base
+-from openstack_dashboard.api import ceilometer
+-from openstack_dashboard.api import cinder
+-from openstack_dashboard.api import fwaas
+-from openstack_dashboard.api import glance
+-from openstack_dashboard.api import heat
+-from openstack_dashboard.api import keystone
+-from openstack_dashboard.api import lbaas
+-from openstack_dashboard.api import network
+-from openstack_dashboard.api import neutron
+-from openstack_dashboard.api import nova
+-from openstack_dashboard.api import swift
+-from openstack_dashboard.api import trove
+-from openstack_dashboard.api import vpn
++import base
++import ceilometer
++import cinder
++import fwaas
++import glance
++import heat
++import keystone
++import lbaas
++import network
++import neutron
++import nova
++import swift
++import trove
++import vpn
+ 
+ assert base
+ assert cinder
