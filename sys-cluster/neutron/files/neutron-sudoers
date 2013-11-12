@@ -1,4 +1,4 @@
 Defaults:neutron !requiretty
 
-neutron ALL = (root) NOPASSWD: /usr/bin/quantum-rootwrap
+neutron ALL = (root) NOPASSWD: /usr/bin/neutron-rootwrap
 
