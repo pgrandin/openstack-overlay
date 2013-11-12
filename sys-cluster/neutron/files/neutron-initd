@@ -1,55 +1,49 @@
 #!/sbin/runscript
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Header: $
 
 depend() {
-    need net
+	need net
 }
-
-BASENAME=$(echo $SVCNAME | cut -d '-' -f 1)
-SERVERNAME=$(echo $SVCNAME | cut -d '-' -f 2)
 
 checkconfig() {
-    if [ ! -r /etc/conf.d/$BASENAME ]; then
-        eerror "No neutron conf.d file found: /etc/conf.d/$BASENAME)"
-        return 1
-    fi
-    return 0
+	if [ ! -r /etc/conf.d/neutron ]; then
+		eerror "No Neutron config found: /etc/conf.d/neutron)"
+		return 1
+	fi
+	# FIXME: might be nice to add some checks for proper /etc/neutron config files
+	return 0
 }
 
+
 start() {
-    checkconfig || return $?
-    . /etc/conf.d/$BASENAME
-    
-    ebegin "Starting ${SVCNAME}"
+	checkconfig || return $?
+	PLUGINNAME=${SVCNAME#*-}
+	if [[ $PLUGINNAME == "openvswitch-agent" || $PLUGINNAME == "server" ]]; then
+		# Should we use a symlink to avoid this special case?
+		CONFIGNAME="plugins/openvswitch/ovs_neutron_plugin"
+		else 
+		CONFIGNAME=${PLUGINNAME//-/_}
+	fi
 
-    if [ ! -d ${PID_PATH} ]; then
-        mkdir ${PID_PATH}
-    fi
-
-    start-stop-daemon --start \
-        --user neutron:neutron \
-        --quiet \
-        --pidfile "${PID_PATH}/${SVCNAME}.pid" \
-        --make-pidfile \
-        --background \
-        --exec /usr/bin/${SVCNAME} -- \
-            --config-file /etc/neutron/neutron.conf \
-            --config-file /etc/neutron/plugins/openvswitch/ovs_neutron_plugin.ini \
-                        --log-file /var/log/neutron/server.log
-
-    eend $? "Failed to start ${SVCNAME}"
+	start-stop-daemon --start --background --make-pidfile \
+			  --user neutron:neutron \
+			  --pidfile "${PID_PATH}/${SVCNAME}.pid" \
+			  --exec /usr/bin/${SVCNAME} -- \
+			  --config-file=/etc/neutron/neutron.conf --config-file=/etc/neutron/${CONFIGNAME}.ini \
+			  --log-file=/var/log/neutron/${LOG_PATH}/${SVCNAME}.log
+	
+	eend $? "Failed to start ${SVCNAME}"
 }
 
 stop() {
-    checkconfig || return $?
-    . /etc/conf.d/$BASENAME
-    
-    ebegin "Stopping ${SVCNAME}"
-    
-    start-stop-daemon --stop --user neutron --quiet --pidfile "${PID_PATH}/${SVCNAME}.pid" \
-                      --exec /usr/bin/${SVCNAME}
-    eend $? "Failed to stop ${SVCNAME}"
+	checkconfig || return $?
+	ebegin "Stopping ${SVCNAME}"
+	
+	start-stop-daemon --stop --pidfile "${PID_PATH}/${SVCNAME}.pid" \
+			  --exec /usr/bin/${SVCNAME} 
+	eend $? "Failed to stop ${SVCNAME}"
 }
 
 #restart() {
