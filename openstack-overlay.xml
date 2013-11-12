@@ -4,13 +4,13 @@
 <repo quality="experimental" status="unofficial">
         <name>openstack</name>
         <description>Openstack Nova ebuilds and dependencies</description>
-        <homepage>https://github.com/alekseymykhailov/openstack-overlay</homepage>
+        <homepage>https://github.com/pgrandin/openstack-overlay</homepage>
 	<!-- credits where it's due : -->
         <owner type="project">
                 <email>cor@hyves.nl</email>
                 <name>Cor Cornelisse</name>
         </owner>
-        <source type="git">https://github.com/alekseymykhailov/openstack-overlay.git</source>
-	<feed>https://github.com/alekseymykhailov/openstack-overlay/commits/master.atom</feed>
+        <source type="git">https://github.com/pgrandin/openstack-overlay.git</source>
+	<feed>https://github.com/pgrandin/openstack-overlay/commits/master.atom</feed>
 </repo>
 </repositories>
