@@ -40,7 +40,8 @@ DEPEND=">=dev-python/django-1.4
 		>=dev-python/python-heatclient-0.2.5
 		dev-python/netaddr
 		>=dev-python/pytz-2010h
-		dev-python/lockfile"
+		dev-python/lockfile
+		www-apache/mod_wsgi"
 
 RDEPEND="${DEPEND}"
 
