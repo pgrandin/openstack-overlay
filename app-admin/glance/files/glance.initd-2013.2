@@ -29,7 +29,7 @@ start() {
 	
 	ebegin "Starting ${SVCNAME}"
 
-	start-stop-daemon --start --quiet --pidfile "${PID_PATH}/${SVCENAME}.pid" \
+	start-stop-daemon --start --quiet --pidfile "${PID_PATH}/${SVCNAME}.pid" \
 		--background \
  		--exec /usr/bin/glance-${SERVERNAME} -- --config-file /etc/glance/glance-${SERVERNAME}.conf
 	
