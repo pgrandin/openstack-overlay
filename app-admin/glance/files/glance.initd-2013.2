@@ -28,9 +28,8 @@ start() {
 	. /etc/conf.d/$BASENAME
 	
 	ebegin "Starting ${SVCNAME}"
-
 	start-stop-daemon --start --quiet --pidfile "${PID_PATH}/${SVCNAME}.pid" \
-		--background \
+		--background --make-pidfile \
  		--exec /usr/bin/glance-${SERVERNAME} -- --config-file /etc/glance/glance-${SERVERNAME}.conf
 	
 	eend $? "Failed to start ${SVCNAME}"
