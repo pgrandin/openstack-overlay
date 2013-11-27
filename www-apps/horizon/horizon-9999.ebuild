@@ -20,40 +20,53 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""
 
-DEPEND="=dev-python/django-1.3.1
-	    dev-python/python-dateutil
-		dev-python/sphinx
-		dev-python/cherrypy
-		dev-python/coverage
-		dev-python/nose
-		dev-python/mox
-		dev-python/pep8
-		dev-python/pylint
-		dev-python/pastedeploy
-		dev-python/eventlet
-		dev-python/kombu
-		dev-python/pycrypto
-		dev-python/routes
-		dev-python/sqlalchemy
-		dev-python/sqlalchemy-migrate
-		dev-python/webob
-		dev-python/pyxattr
-		dev-python/python-gflags
-		dev-python/python-novaclient
-		dev-python/python-cloudfiles
-		app-admin/glance
-		dev-python/setuptools"
+DEPEND=">=dev-python/django-1.4
+		<dev-python/django-1.6
+		>=dev-python/django-compressor-1.3
+		>=dev-python/django-openstack-auth-1.1.3
+		>=dev-python/eventlet-0.13.0
+		>=dev-python/kombu-2.4.8
+		>=dev-python/lesscpy-0.9j
+		>=dev-python/iso8601-0.1.8
+		>=dev-python/python-cinderclient-1.0.6
+		>=dev-python/python-glanceclient-0.9.0
+		>=dev-python/python-keystoneclient-0.4.1
+		>=dev-python/python-novaclient-2.15.0
+		>=dev-python/python-neutronclient-2.3.0
+		<dev-python/python-neutronclient-3
+		>=dev-python/python-swiftclient-1.5
+		>=dev-python/python-ceilometerclient-1.0.6
+		>=dev-python/python-troveclient-1.0.0
+		>=dev-python/python-heatclient-0.2.5
+		>=dev-python/netaddr-0.7.6
+		>=dev-python/pytz-2010h
+		>=dev-python/lockfile-0.8
+		www-apache/mod_wsgi"
+
 RDEPEND="${DEPEND}"
 
-DISTUTILS_SETUP_FILES=("horizon/setup.py" "openstack-dashboard/setup.py")
+src_prepare() {
+    epatch ${FILESDIR}"/bugfix-1125622.patch"
+}
+
 
 src_install() {
 	distutils_src_install
-
-	#newconfd "${FILESDIR}/openstack-dashboard.confd" openstack-dashboard
-	#newinitd "${FILESDIR}/openstack-dashboard.initd" openstack-dashboard
-
-	#diropts -m 0750
-	#dodir /var/run/quantum /var/log/quantum
+	dodoc ${FILESDIR}"/horizon_vhost.conf"
+	dodir /etc/horizon
+	insinto /etc/horizon
+	doins openstack_dashboard/local/local_settings.py.example
+	# Little dirty this way, but get's the job done bro
+	dosym /etc/horizon/local_settings.py /usr/lib64/python2.7/site-packages/openstack_dashboard/local/local_settings.py
 }
 
+pkg_postinst() {
+	elog
+	elog "A vhost configuration example for apache2 with mod_wsgi can be found"
+	elog "in /usr/share/doc/${PF}/horizon_vhost.conf"
+	elog "Adapt it to suite your needs, and install it in /etc/apache/vhosts.d/"
+	elog "Replace localhost by the real servername"
+	elog
+	elog "The dashboard can be configured through /etc/horizon/settings.py"
+	elog
+}
