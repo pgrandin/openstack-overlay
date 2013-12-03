@@ -74,6 +74,7 @@ python_install() {
 	diropts -m 0750
 	dodir /var/run/glance /var/log/glance /var/lib/glance/images /var/lib/glance/scrubber
 	keepdir /etc/glance
+	keepdir /var/run/glance
 	keepdir /var/log/glance
 	keepdir /var/lib/glance/images
 	keepdir /var/lib/glance/scrubber
