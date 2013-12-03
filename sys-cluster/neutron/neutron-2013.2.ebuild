@@ -96,6 +96,7 @@ python_install() {
 	diropts -m 750
 	dodir /var/log/neutron /var/log/neutron
 	fowners neutron:neutron /var/log/neutron
+	diropts -m 755
 	keepdir /etc/neutron
 	insinto /etc/neutron
 
