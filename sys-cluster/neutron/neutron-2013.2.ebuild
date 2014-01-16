@@ -5,11 +5,11 @@
 EAPI=5
 PYTHON_COMPAT=( python2_7 )
 
-inherit distutils-r1
+inherit distutils-r1 user
 
 #restricted due to packages missing and bad depends in the test ==webob-1.0.8   
 RESTRICT="test"
-DESCRIPTION="Quantum is a virtual network service for Openstack."
+DESCRIPTION="Neutron is a virtual network service for Openstack."
 HOMEPAGE="https://launchpad.net/neutron"
 SRC_URI="http://launchpad.net/${PN}/havana/${PV}/+download/${P}.tar.gz"
 
