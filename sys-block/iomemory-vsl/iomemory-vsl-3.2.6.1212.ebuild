@@ -7,7 +7,7 @@ EAPI=5
 inherit linux-mod
 DESCRIPTION="iomemory-vsl kernel module for FusionIO cards"
 HOMEPAGE="https://www.fusionio.com/"
-SRC_URI="${PN}_${PV}-1.0.tar.gz"
+SRC_URI="${PN}-${PV}.tar.gz"
 RESTRICT="fetch"
 
 LICENSE=""
@@ -25,5 +25,6 @@ MODULE_NAMES="iomemory-vsl(block:${WORKDIR}/${PN}-${PV}/root/usr/src/fio/iomemor
 pkg_nofetch() {
     einfo "Upstream has implement a mandatory clickthrough EULA for distfile download"
 	einfo "Please visit https://support.fusionio.com/downloads/"
-	einfo "And place ${PN}_${PV}-1.0.tar.gz in ${DISTDIR}"
+	einfo "Download iomemory-vsl-3.2.6.1212-1.0.src.rpm, extract it"
+	einfo "And place ${PN}-${PV}.tar.gz in ${DISTDIR}"
 }
