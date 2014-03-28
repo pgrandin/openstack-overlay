@@ -87,7 +87,8 @@ src_configure() {
 		$(use_with radosgw) \
 		$(use_with gtk gtk2) \
 		$(use_enable static-libs static) \
-		$(use_with tcmalloc)
+		$(use_with tcmalloc) \
+		$(use_with xfs libxfs)
 }
 
 src_install() {
