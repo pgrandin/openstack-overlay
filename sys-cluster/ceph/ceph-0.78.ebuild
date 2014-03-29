@@ -34,7 +34,9 @@ CDEPEND="
 	dev-libs/libedit
 	dev-libs/leveldb
 	dev-libs/crypto++
+	sys-apps/gptfdisk
 	sys-apps/keyutils
+	sys-block/parted
 	fuse? ( sys-fs/fuse )
 	libatomic? ( dev-libs/libatomic_ops )
 	gtk? (
