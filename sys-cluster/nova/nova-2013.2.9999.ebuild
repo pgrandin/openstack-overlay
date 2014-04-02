@@ -20,20 +20,20 @@ REQUIRED_USE="|| ( mysql postgres sqlite )
 			  || ( kvm xen )"
 
 DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]
-		>=dev-python/pbr-0.5.21[${PYTHON_USEDEP}]
+		>=dev-python/pbr-0.6[${PYTHON_USEDEP}]
 		<dev-python/pbr-1.0[${PYTHON_USEDEP}]
 		app-admin/sudo"
 
 RDEPEND="sqlite? ( >=dev-python/sqlalchemy-0.7.8[sqlite,${PYTHON_USEDEP}]
-	          <dev-python/sqlalchemy-0.7.99[sqlite,${PYTHON_USEDEP}] )
+	          <dev-python/sqlalchemy-0.9.99[sqlite,${PYTHON_USEDEP}] )
 		mysql? ( >=dev-python/sqlalchemy-0.7.8[mysql,${PYTHON_USEDEP}]
-	         <dev-python/sqlalchemy-0.7.99[mysql,${PYTHON_USEDEP}] )
+	         <dev-python/sqlalchemy-0.9.99[mysql,${PYTHON_USEDEP}] )
 		postgres? ( >=dev-python/sqlalchemy-0.7.8[postgres,${PYTHON_USEDEP}]
-	            <dev-python/sqlalchemy-0.7.99[postgres,${PYTHON_USEDEP}] )
+	            <dev-python/sqlalchemy-0.9.99[postgres,${PYTHON_USEDEP}] )
 		>=dev-python/amqplib-0.6.1[${PYTHON_USEDEP}]
 		>=dev-python/anyjson-0.3.3[${PYTHON_USEDEP}]
 		virtual/python-argparse[${PYTHON_USEDEP}]
-		>=dev-python/boto-2.4.0[${PYTHON_USEDEP}]
+		>=dev-python/boto-2.12.0[${PYTHON_USEDEP}]
 		!~dev-python/boto-2.13.0[${PYTHON_USEDEP}]
 		>=dev-python/eventlet-0.13.0[${PYTHON_USEDEP}]
 		dev-python/jinja[${PYTHON_USEDEP}]
@@ -46,18 +46,20 @@ RDEPEND="sqlite? ( >=dev-python/sqlalchemy-0.7.8[sqlite,${PYTHON_USEDEP}]
 		>=dev-python/pastedeploy-1.5.0-r1[${PYTHON_USEDEP}]
 		dev-python/paste[${PYTHON_USEDEP}]
 		>=dev-python/sqlalchemy-migrate-0.7.2[${PYTHON_USEDEP}]
-		dev-python/netaddr[${PYTHON_USEDEP}]
+		!~dev-python/sqlalchemy-migrate-0.8.4[${PYTHON_USEDEP}]
+		>=dev-python/netaddr-0.7.6[${PYTHON_USEDEP}]
 		>=dev-python/suds-0.4[${PYTHON_USEDEP}]
-		>=dev-python/paramiko-1.8.0[${PYTHON_USEDEP}]
+		>=dev-python/paramiko-1.9.0[${PYTHON_USEDEP}]
 		dev-python/pyasn1[${PYTHON_USEDEP}]
 		>=dev-python/Babel-1.3[${PYTHON_USEDEP}]
-		>=dev-python/iso8601-0.1.8[${PYTHON_USEDEP}]
-		>=dev-python/python-cinderclient-1.0.5[${PYTHON_USEDEP}]
-		>=dev-python/python-neutronclient-2.3.0[${PYTHON_USEDEP}]
+		>=dev-python/iso8601-0.1.9[${PYTHON_USEDEP}]
+		>=dev-python/python-cinderclient-1.0.6[${PYTHON_USEDEP}]
+		>=dev-python/python-neutronclient-2.3.4[${PYTHON_USEDEP}]
 		<=dev-python/python-neutronclient-3.0.0[${PYTHON_USEDEP}]
 		>=dev-python/python-glanceclient-0.9.0[${PYTHON_USEDEP}]
-		>=dev-python/python-keystoneclient-0.3.2[${PYTHON_USEDEP}]
-		>=dev-python/stevedore-0.10[${PYTHON_USEDEP}]
+		>=dev-python/python-keystoneclient-0.7.0[${PYTHON_USEDEP}]
+		>=dev-python/six-1.5.2[${PYTHON_USEDEP}]
+		>=dev-python/stevedore-0.14[${PYTHON_USEDEP}]
 		>=dev-python/websockify-0.5.1[${PYTHON_USEDEP}]
 		<dev-python/websockify-0.6[${PYTHON_USEDEP}]
 		>=dev-python/oslo-config-1.2.0[${PYTHON_USEDEP}]
