@@ -40,7 +40,7 @@ DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]
 			>=dev-python/testrepository-0.0.17[${PYTHON_USEDEP}]
 			dev-python/oslo-sphinx[${PYTHON_USEDEP}] )"
 
-RDEPEND="=dev-python/amqplib-0.6.1-r1[${PYTHON_USEDEP}]
+RDEPEND=">=dev-python/amqplib-0.6.1-r1[${PYTHON_USEDEP}]
 		>=dev-python/anyjson-0.3.3[${PYTHON_USEDEP}]
 		virtual/python-argparse[${PYTHON_USEDEP}]
 		>=dev-python/Babel-1.3[${PYTHON_USEDEP}]
