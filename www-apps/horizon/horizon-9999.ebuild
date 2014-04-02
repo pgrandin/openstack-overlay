@@ -21,26 +21,29 @@ KEYWORDS="~amd64"
 IUSE=""
 
 DEPEND=">=dev-python/django-1.4
-		<dev-python/django-1.6
+		<dev-python/django-1.7
 		>=dev-python/django-compressor-1.3
-		>=dev-python/django-openstack-auth-1.1.3
+		>=dev-python/django-openstack-auth-1.1.4
 		>=dev-python/eventlet-0.13.0
+		>=dev-python/iso8601-0.1.9
 		>=dev-python/kombu-2.4.8
 		>=dev-python/lesscpy-0.9j
-		>=dev-python/iso8601-0.1.8
+		>=dev-python/lockfile-0.8
+		>=dev-python/netaddr-0.7.6
+		>=dev-python/pbr-0.6
+		<dev-python/pbr-1.0
+		>=dev-python/python-ceilometerclient-1.0.6
 		>=dev-python/python-cinderclient-1.0.6
 		>=dev-python/python-glanceclient-0.9.0
-		>=dev-python/python-keystoneclient-0.4.1
-		>=dev-python/python-novaclient-2.15.0
-		>=dev-python/python-neutronclient-2.3.0
+		>=dev-python/python-heatclient-0.2.3
+		>=dev-python/python-keystoneclient-0.7.0
+		>=dev-python/python-neutronclient-2.3.4
 		<dev-python/python-neutronclient-3
-		>=dev-python/python-swiftclient-1.5
-		>=dev-python/python-ceilometerclient-1.0.6
-		>=dev-python/python-troveclient-1.0.0
-		>=dev-python/python-heatclient-0.2.5
-		>=dev-python/netaddr-0.7.6
+		>=dev-python/python-novaclient-2.17.0
+		>=dev-python/python-swiftclient-1.6
+		>=dev-python/python-troveclient-1.0.3
 		>=dev-python/pytz-2010h
-		>=dev-python/lockfile-0.8
+		>=dev-python/six-1.5.2
 		www-apache/mod_wsgi"
 
 RDEPEND="${DEPEND}"
