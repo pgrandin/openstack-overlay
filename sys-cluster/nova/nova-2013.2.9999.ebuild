@@ -24,11 +24,11 @@ DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]
 		<dev-python/pbr-1.0[${PYTHON_USEDEP}]
 		app-admin/sudo"
 
-RDEPEND="sqlite? ( >=dev-python/sqlalchemy-0.7.8[sqlite,${PYTHON_USEDEP}]
+RDEPEND="sqlite? ( >=dev-python/sqlalchemy-0.7.2[sqlite,${PYTHON_USEDEP}]
 	          <dev-python/sqlalchemy-0.9.99[sqlite,${PYTHON_USEDEP}] )
-		mysql? ( >=dev-python/sqlalchemy-0.7.8[mysql,${PYTHON_USEDEP}]
+		mysql? ( >=dev-python/sqlalchemy-0.7.2[mysql,${PYTHON_USEDEP}]
 	         <dev-python/sqlalchemy-0.9.99[mysql,${PYTHON_USEDEP}] )
-		postgres? ( >=dev-python/sqlalchemy-0.7.8[postgres,${PYTHON_USEDEP}]
+		postgres? ( >=dev-python/sqlalchemy-0.7.2[postgres,${PYTHON_USEDEP}]
 	            <dev-python/sqlalchemy-0.9.99[postgres,${PYTHON_USEDEP}] )
 		>=dev-python/amqplib-0.6.1[${PYTHON_USEDEP}]
 		>=dev-python/anyjson-0.3.3[${PYTHON_USEDEP}]
