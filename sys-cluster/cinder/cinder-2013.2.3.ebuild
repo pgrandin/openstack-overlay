@@ -19,7 +19,8 @@ REQUIRED_USE="|| ( mysql postgres sqlite )"
 
 #sudo is a build dep because I want the sudoers.d directory to exist, lazy.
 DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]
-		dev-python/pbr[${PYTHON_USEDEP}]
+        >=dev-python/pbr-0.5.21[${PYTHON_USEDEP}]
+		<dev-python/pbr-1.0[${PYTHON_USEDEP}]
 		app-admin/sudo
 		test? ( >=dev-python/jsonschema-0.7[${PYTHON_USEDEP}]
 			<=dev-python/jsonschema-1.0[${PYTHON_USEDEP}]
