@@ -75,7 +75,7 @@ DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]
 	<dev-python/pbr-1.0[${PYTHON_USEDEP}]"
 
 PATCHES=(
-		"${FILESDIR}/2013.2.2-CVE-2014-2237.patch"
+		""
 )
 
 pkg_setup() {
