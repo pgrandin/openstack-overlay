@@ -96,7 +96,10 @@ src_install() {
 }
 
 pkg_postinst() {
-        insinto /etc/conf.d/
+        diropts -m 0755
+        dodir /etc/mysql
+
+        insinto /etc/mysql/
         newins ${FILESDIR}/conf.d.mysql mysql
 
         exeinto /etc/init.d/
