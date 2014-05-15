@@ -12,7 +12,7 @@ PERCONA_MYSQL_VERSION_EXTRA="62"
 
 inherit versionator
 MIRROR_PV=$(get_version_component_range 1-2 ${PV})
-SERVER_URI="http://www.percona.com/downloads/Percona-Server-$MIRROR_PV/Percona-Server-$MY_PV-$PERCONA_RELEASE/source/$PERCONA_PV.tar.gz"
+SERVER_URI="http://www.percona.com/redir/downloads/Percona-Server-$MIRROR_PV/Percona-Server-$MY_PV-$PERCONA_RELEASE/source/$PERCONA_PV.tar.gz"
 
 S="${WORKDIR}/$PERCONA_PV"
 
