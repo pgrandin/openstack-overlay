@@ -9,8 +9,8 @@ inherit distutils-r1 eutils git-2 multilib user
 
 DESCRIPTION="A cloud computing fabric controller (main part of an IaaS system) written in Python."
 HOMEPAGE="https://launchpad.net/nova"
-EGIT_REPO_URI="https://github.com/openstack/nova.git"
-EGIT_BRANCH="stable/havana"
+EGIT_REPO_URI="https://github.com/jdurgin/nova.git"
+EGIT_BRANCH="havana-ephemeral-rbd"
 
 LICENSE="Apache-2.0"
 SLOT="0"
